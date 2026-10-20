@@ -1,0 +1,23 @@
+<ng-template #contentTemplate>
+  <ng-content></ng-content>
+</ng-template>
+
+@if (href) {
+  <a
+    [class]="classes"
+    [href]="href"
+    [target]="target"
+    [attr.rel]="target === '_blank' ? 'noopener noreferrer' : null"
+    [attr.aria-label]="ariaLabel"
+  >
+    <ng-container [ngTemplateOutlet]="contentTemplate"></ng-container>
+  </a>
+} @else if (routerLink) {
+  <a [class]="classes" [routerLink]="routerLink" [attr.aria-label]="ariaLabel">
+    <ng-container [ngTemplateOutlet]="contentTemplate"></ng-container>
+  </a>
+} @else {
+  <button [class]="classes" [type]="type" [disabled]="disabled" [attr.aria-label]="ariaLabel">
+    <ng-container [ngTemplateOutlet]="contentTemplate"></ng-container>
+  </button>
+}

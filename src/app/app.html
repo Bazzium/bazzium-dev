@@ -1,0 +1,22 @@
+<div class="site-shell" #siteShell>
+  <a class="skip-link" href="#main-content">Pređi na sadržaj</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/" data-primary-nav-link><img class="brand-mark" src="/logo.svg" alt="" width="54" height="54"><span>Bazzium | Dev</span></a>
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen()" aria-controls="primary-nav" (click)="toggleMenu()">Meni</button>
+    <nav id="primary-nav" class="site-nav" #primaryNav [class.open]="menuOpen()" aria-label="Glavna navigacija">
+      <span class="nav-indicator" aria-hidden="true" [class.transitions-disabled]="navIndicatorTransitionsDisabled()" [style.opacity]="navIndicator().opacity" [style.transform]="navIndicator().transform" [style.width]="navIndicator().width"></span>
+      <a href="/" data-primary-nav-link [class.active]="isActive('/')" [attr.aria-current]="isActive('/') ? 'page' : null">Početna</a>
+      <a href="/usluge" data-primary-nav-link [class.active]="isActive('/usluge')" [attr.aria-current]="isActive('/usluge') ? 'page' : null">Usluge</a>
+      <a href="/portfolio" data-primary-nav-link [class.active]="isActive('/portfolio')" [attr.aria-current]="isActive('/portfolio') ? 'page' : null">Portfolio</a>
+      <a href="/saradnja" data-primary-nav-link [class.active]="isActive('/saradnja')" [attr.aria-current]="isActive('/saradnja') ? 'page' : null">Saradnja</a>
+      <a href="/kontakt" data-primary-nav-link [class.active]="isActive('/kontakt')" [attr.aria-current]="isActive('/kontakt') ? 'page' : null">Kontakt</a>
+    </nav>
+  </div></header>
+  <main id="main-content" class="site-main"><router-outlet /></main>
+  <footer class="site-footer"><div class="footer-grid">
+    <section><h3>Bazzium | Dev</h3><p>Od ideje do objave.</p><p>Sajtovi i web aplikacije po meri tvog posla.</p></section>
+    <section><h3>Istraži</h3><nav class="footer-links" aria-label="Navigacija u podnožju"><a routerLink="/usluge">Usluge</a><a routerLink="/portfolio">Portfolio</a><a routerLink="/saradnja">Saradnja</a><a routerLink="/kontakt">Kontakt</a></nav></section>
+    <section class="footer-company"><h3>Kontakt</h3><a href="mailto:dev@bazzium.com">dev&#64;bazzium.com</a></section>
+  </div><small>© 2026 Bazzium | Dev</small></footer>
+</div>
+

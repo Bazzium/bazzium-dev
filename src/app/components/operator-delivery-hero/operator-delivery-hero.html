@@ -1,0 +1,48 @@
+<section class="hero" appBottomEdgeFade>
+  <div>
+    <p class="eyebrow">iGaming game supplier</p>
+    <h1>Distinctive casino games, ready for operator growth.</h1>
+    <p class="lead">
+      Build a stronger casino lobby with a growing portfolio of games designed for modern operators.
+    </p>
+    <p class="summary">
+      Bazzium pairs memorable game experiences with a focused delivery model so content, product, and integration teams can move forward together.
+    </p>
+    <div class="hero-actions">
+      @if (showExploreGames()) {
+        <app-button [routerLink]="['/games']" variant="primary" size="lg">Explore games</app-button>
+      }
+      <app-button href="/contact" variant="secondary" size="lg">Request portfolio access</app-button>
+    </div>
+  </div>
+
+  <app-card class="flow-card" tone="muted">
+    <h2>Operator delivery</h2>
+    <p>
+      A focused path from portfolio review to controlled game rollout.
+    </p>
+    <svg viewBox="0 0 760 330" role="img" aria-label="Systems-grade architecture flow diagram">
+      <defs>
+        <linearGradient id="flowRail" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#9aabba" />
+          <stop offset="100%" stop-color="#31465a" />
+        </linearGradient>
+      </defs>
+      <text x="382" y="28" class="rail-label">Operator delivery rail</text>
+      <path class="flow-line" d="M170 95 H340" />
+      <path class="flow-line" d="M420 95 H590" />
+      <path class="flow-line" d="M670 95 H704" />
+      <path class="flow-line" d="M704 95 V250" />
+      <path class="flow-line" d="M704 250 H670" />
+      <path class="flow-line" d="M590 250 H420" />
+      <path class="flow-line" d="M340 250 H170" />
+      <g class="node" transform="translate(130,95)"><circle r="40" /><text y="60" class="node-title">Review</text><text y="75" class="node-sub">game fit</text></g>
+      <g class="node" transform="translate(380,95)"><circle r="40" /><text y="60" class="node-title">Plan</text><text y="75" class="node-sub">release set</text></g>
+      <g class="node" transform="translate(630,95)"><circle r="40" /><text y="60" class="node-title">Integrate</text><text y="75" class="node-sub">launch path</text></g>
+      <g class="node" transform="translate(630,250)"><circle r="40" /><text y="60" class="node-title">Launch</text><text y="75" class="node-sub">controlled rollout</text></g>
+      <g class="node" transform="translate(380,250)"><circle r="40" /><text y="60" class="node-title">Learn</text><text y="75" class="node-sub">operator feedback</text></g>
+      <g class="node" transform="translate(130,250)"><circle r="40" /><text y="60" class="node-title">Grow</text><text y="75" class="node-sub">portfolio depth</text></g>
+    </svg>
+    <br>
+  </app-card>
+</section>

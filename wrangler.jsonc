@@ -1,0 +1,14 @@
+{
+  "name": "bazzium-dev",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-20",
+  "assets": {
+    "directory": "./dist/bazzium/browser",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "ratelimits": [
+    { "name": "CONTACT_RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }
+  ]
+}

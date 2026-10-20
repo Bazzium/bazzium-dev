@@ -1,0 +1,63 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .8fr;
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 2em;
+  margin-bottom: 7em;
+}
+
+.eyebrow {
+  margin: 0 0 .55rem;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .74rem;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.06;
+  max-width: 19ch;
+}
+
+.lead {
+  margin: 1rem 0 0;
+  font-size: 1.1rem;
+  color: var(--heading-text);
+  font-weight: 600;
+}
+
+.summary {
+  margin: .7rem 0 0;
+  color: var(--text-muted);
+  max-width: 63ch;
+  line-height: 1.62;
+}
+
+.hero-actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1.3rem;
+}
+
+.flow-card { height: 100%; }
+.flow-card h2 { margin: 1rem 0 0; font-family: var(--font-display); }
+.flow-card p { margin: .4rem 0 2rem; color: var(--text-muted); font-size: .86rem; }
+.flow-card svg { width: 92%; height: auto; padding-bottom: .35rem; margin: 0 auto; }
+.node circle { fill: #fefefe; stroke: #8ea0b2; stroke-width: 1.6; }
+.node-title { font-size: 24px; font-weight: 700; text-anchor: middle; font-family: var(--font-body); }
+.node-sub { fill: #5d6e7f; font-size: 18px; text-anchor: middle; font-family: var(--font-body); }
+.rail-label { fill: #5f7082; font-size: 23.5px; text-anchor: middle; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; font-family: var(--font-body); }
+.flow-line { stroke: #0f3a5f; fill: none; stroke-width: 5; stroke-dasharray: 16 10; stroke-linecap: butt; opacity: 1; stroke-dashoffset: 0; animation: travel 1.2s linear infinite; }
+
+@keyframes travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -52; } }
+
+@media (max-width: 1080px) { .flow-card svg { width: 96%; margin-left: 0; } }
+@media (max-width: 980px) { .hero { grid-template-columns: 1fr; margin-top: 1.75em; margin-bottom: 4.5em; } }
+@media (max-width: 700px) { .hero { margin-top: 1.25em; margin-bottom: 3em; } .hero-actions { flex-direction: column; align-items: stretch; } .flow-card svg { width: 100%; max-width: 100%; margin-left: 0; } }
+@media (max-width: 700px) and (orientation: portrait) { .hero { margin-top: 1em; margin-bottom: 2.25em; } }
+@media (prefers-reduced-motion: reduce) { .flow-line { animation: none; } }

@@ -1,0 +1,27 @@
+.section-header {
+  margin-bottom: 1.5rem;
+  max-width: 66ch;
+}
+
+.eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.1vw, 1.95rem);
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}

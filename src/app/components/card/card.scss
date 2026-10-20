@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.card {
+  background: var(--surface);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  height: 100%;
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.card-muted {
+  background: var(--surface-2);
+}
+
+:host(:hover) .card:not(.card-static),
+:host(:focus-within) .card:not(.card-static) {
+  transform: translateY(-2px);
+}

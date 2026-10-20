@@ -1,0 +1,60 @@
+{
+  "name": "bazzium-dev",
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "verify:prod-html": "node -e \"const fs=require('fs');const path=require('path');const root='dist/bazzium/browser';const walk=(dir)=>fs.readdirSync(dir,{withFileTypes:true}).flatMap((entry)=>entry.isDirectory()?walk(path.join(dir,entry.name)):path.join(dir,entry.name));if(!fs.existsSync(root)){console.error('Missing build output:',root);process.exit(1);}const htmlFiles=walk(root).filter((file)=>file.endsWith('.html'));const bad=htmlFiles.filter((file)=>{const source=fs.readFileSync(file,'utf8');return source.includes('/@vite/client')||source.includes('@vite/client');});if(bad.length){console.error('Found Vite dev client in production HTML:');bad.forEach((file)=>console.error(file));process.exit(1);}console.log('Verified: no Vite HMR client scripts in prerendered HTML.');\"",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "npm run build:ssg",
+    "build:ssg": "npm run clean && ng build --configuration production && npm run verify:prod-html",
+    "preview:ssg": "npx http-server dist/bazzium/browser -p 4173 -c-1",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "preview": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/platform-server": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "@angular/ssr": "^20.3.16",
+    "express": "^5.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.5",
+    "@angular/cli": "^20.3.5",
+    "@angular/compiler-cli": "^20.3.0",
+    "@types/express": "^5.0.1",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.17.19",
+    "jasmine-core": "~5.9.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.9.2",
+    "wrangler": "^4.151.3"
+  }
+}

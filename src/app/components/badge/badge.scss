@@ -1,0 +1,36 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: #f8fafc;
+  transition: transform 180ms ease;
+}
+
+:host(:hover) .badge,
+:host(:focus-within) .badge {
+  transform: translateY(-1px);
+}
+
+.badge-engineering {
+  color: #1f4f7a;
+  border-color: #b9d4ea;
+  background: #eff7fd;
+}
+
+.badge-release {
+  color: #4d456b;
+  border-color: #cfc7ea;
+  background: #f3f1fb;
+}
+
+.badge-security {
+  color: #235f49;
+  border-color: #b7dccc;
+  background: #ecf8f1;
+}

@@ -1,0 +1,13 @@
+<header class="section-header">
+  @if (eyebrow) {
+    <p class="eyebrow">{{ eyebrow }}</p>
+  }
+  @if (headingLevel === 'h1') {
+    <h1>{{ title }}</h1>
+  } @else {
+    <h2>{{ title }}</h2>
+  }
+  @if (description) {
+    <p class="description">{{ description }}</p>
+  }
+</header>

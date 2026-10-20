@@ -1,0 +1,87 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-md {
+  padding: 0.7rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.btn-lg {
+  padding: 0.9rem 1.35rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--accent-strong), #3a4f66);
+  color: #f3f7fb;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: linear-gradient(120deg, var(--highlight), var(--highlight));
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--heading-text);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: var(--highlight);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--heading-text);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: var(--highlight);
+  color: #fff;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

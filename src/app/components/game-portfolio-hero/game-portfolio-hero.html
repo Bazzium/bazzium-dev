@@ -1,0 +1,90 @@
+<section class="games-hero" appBottomEdgeFade>
+  <div>
+    <p class="eyebrow">Game portfolio</p>
+    <h1>Casino games built for operator growth.</h1>
+    <p class="lead">
+      Bazzium is building a growing portfolio of distinctive game experiences for modern iGaming operators.
+    </p>
+    <p class="summary">
+      Start with content your players want to explore, then give your teams a clear path to launch, operate, and grow the catalogue.
+    </p>
+    <div class="hero-actions">
+      <app-button [routerLink]="['/contact']" variant="primary" size="lg">Request portfolio access</app-button>
+      <app-button [routerLink]="['/for-operators']" variant="secondary" size="lg">For operators</app-button>
+    </div>
+  </div>
+
+  <aside class="hero-collage" aria-label="Bazzium game screenshots">
+    <picture class="hero-shot hero-shot--mock">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/content/games/mock-game-fire-480w.avif" />
+      <source media="(max-width: 640px)" type="image/webp" srcset="/content/games/mock-game-fire-480w.webp" />
+      <source
+        type="image/avif"
+        srcset="/content/games/mock-game-fire-960w.avif 960w, /content/games/mock-game-fire-1500w.avif 1500w"
+        sizes="(max-width: 980px) 78vw, 30vw"
+      />
+      <source
+        type="image/webp"
+        srcset="/content/games/mock-game-fire-960w.webp 960w, /content/games/mock-game-fire-1500w.webp 1500w"
+        sizes="(max-width: 980px) 78vw, 30vw"
+      />
+      <img
+        class="hero-shot-image"
+        src="/content/games/mock-game-fire.png"
+        alt="Mock Game with a fiery casino character and reel grid"
+        width="1502"
+        height="840"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+      />
+    </picture>
+    <picture class="hero-shot hero-shot--neon-cascade">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/content/games/neon-fruits-cascade-480w.avif" />
+      <source media="(max-width: 640px)" type="image/webp" srcset="/content/games/neon-fruits-cascade-480w.webp" />
+      <source
+        type="image/avif"
+        srcset="/content/games/neon-fruits-cascade-960w.avif 960w, /content/games/neon-fruits-cascade-1500w.avif 1500w"
+        sizes="(max-width: 980px) 78vw, 30vw"
+      />
+      <source
+        type="image/webp"
+        srcset="/content/games/neon-fruits-cascade-960w.webp 960w, /content/games/neon-fruits-cascade-1500w.webp 1500w"
+        sizes="(max-width: 980px) 78vw, 30vw"
+      />
+      <img
+        class="hero-shot-image"
+        src="/content/games/neon-fruits-cascade.png"
+        alt="Cosmic Garden cascading fruit symbol grid"
+        width="1502"
+        height="839"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+      />
+    </picture>
+    <picture class="hero-shot hero-shot--neon-scatters">
+      <source media="(max-width: 640px)" type="image/avif" srcset="/content/games/neon-fruits-scatters-480w.avif" />
+      <source media="(max-width: 640px)" type="image/webp" srcset="/content/games/neon-fruits-scatters-480w.webp" />
+      <source
+        type="image/avif"
+        srcset="/content/games/neon-fruits-scatters-960w.avif 960w, /content/games/neon-fruits-scatters-1500w.avif 1500w"
+        sizes="(max-width: 980px) 76vw, 30vw"
+      />
+      <source
+        type="image/webp"
+        srcset="/content/games/neon-fruits-scatters-960w.webp 960w, /content/games/neon-fruits-scatters-1500w.webp 1500w"
+        sizes="(max-width: 980px) 76vw, 30vw"
+      />
+      <img
+        class="hero-shot-image"
+        src="/content/games/neon-fruits-scatters.png"
+        alt="Cosmic Garden game with glowing scatter symbols"
+        width="1498"
+        height="840"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  </aside>
+</section>

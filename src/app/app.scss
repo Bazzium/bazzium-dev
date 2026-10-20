@@ -1,0 +1,233 @@
+.site-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background:
+    radial-gradient(circle at 10% -10%, rgba(63, 86, 111, 0.12), transparent 35%),
+    radial-gradient(circle at 95% 0%, rgba(105, 117, 132, 0.1), transparent 24%),
+    var(--bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--accent-strong);
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(180, 191, 202, 0.55);
+  background: rgba(243, 245, 247, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  width: min(1180px, 100% - 2.5rem);
+  margin: 0 auto;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--heading-text);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 3.375rem;
+  height: 3.375rem;
+  flex: 0 0 auto;
+}
+
+.brand-mark-bg {
+  fill: var(--heading-text);
+}
+
+.brand-mark-glyph {
+  fill: #f3f7fb;
+}
+
+.brand-mark-accent {
+  fill: var(--highlight);
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.site-nav a,
+.dropdown-trigger {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  border: 1px solid #bec8d3;
+  background: #eef2f5;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    width 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-indicator.transitions-disabled {
+  transition: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.dropdown-trigger:hover,
+.dropdown-trigger:focus-visible {
+  color: var(--heading-text);
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.site-nav a.active,
+.dropdown-trigger.active {
+  color: var(--heading-text);
+  border-color: transparent;
+  background: transparent;
+}
+
+.menu-toggle {
+  margin-left: auto;
+  display: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--heading-text);
+  padding: 0.55rem 0.75rem;
+  font-weight: 650;
+}
+
+.site-main {
+  width: min(1180px, 100% - 2.5rem);
+  margin: 0 auto;
+  padding: 2.5rem 0 6rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #eef2f5;
+  padding: 2rem 0;
+}
+
+.footer-grid {
+  width: min(1180px, 100% - 2.5rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr 1.25fr 0.9fr;
+  gap: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.footer-link-columns {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1.5rem;
+}
+
+.footer-grid h3 {
+  margin: 0 0 0.7rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.footer-links,
+.footer-company {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+}
+
+.footer-grid p,
+.footer-grid a {
+  margin: 0;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer small {
+  display: block;
+  width: min(1180px, 100% - 2.5rem);
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 920px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    margin: 0.8rem 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.5rem;
+  }
+
+  .nav-indicator {
+    height: 2.35rem;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 0.35rem 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+  }
+
+  .footer-link-columns {
+    grid-template-columns: 1fr;
+  }
+}
